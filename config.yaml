@@ -1,0 +1,2 @@
+handle:
+ - rewrite: if( path == "/ali.jpg" ) goto "/php/gen_img.php"

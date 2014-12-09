@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:wb="http://open.weibo.com/wb">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="utf-8" />
+		<!--<link rel="author" href="https://plus.google.com/117054904202244414422?rel=author">-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>支付宝十周年#十年账单有话说#在线生成器 - Powered By aTool.org|在线工具</title>
+		<meta name="Keywords" content="atool,阿里巴巴,支付包,十周年,在线生成器" />  
+		<meta name="Description" content="阿里支付宝十周年活动在线生成器" />
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<link rel="bookmark" href="favicon.ico"/>
+		<!-- Bootstrap -->
+		<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="res/css/uploader.css" />
+		<link rel="stylesheet" href="res/css/style.css" />
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2337303479" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" >
+			function ReImgSize() {
+				var img_gen = document.getElementById('gen_img');
+				var temp_img = document.getElementById('temp_img');
+				var gen_img_panel = document.getElementById('gen_img_file_panel');
+				var width = gen_img_panel.style.width || gen_img_panel.clientWidth || gen_img_panel.offsetWidth || gen_img_panel.scrollWidth;
+				temp_img.width = width - 20;
+				img_gen.width = width - 20;
+			}
+			function ReShowAllImgSize() {
+				var img_gen = document.getElementById('show_all_img');
+				var gen_img_panel = document.getElementById('upan-info');
+				var width = gen_img_panel.style.width || gen_img_panel.clientWidth || gen_img_panel.offsetWidth || gen_img_panel.scrollWidth;
+				img_gen.width = width - 20;
+			}
+		</script>
+	</head>
+	<body role="document">
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="demo-nav">
+			<div class="container">
+			  <div class="navbar-header">
+				<a class="navbar-brand" target="_blank" href="http://www.atool.org/">aTool 在线工具</a>
+			  </div>
+			  <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a class="menu-item" target="_blank" href="http://www.Hust.cc/" title="华中大导航">Hust</a></li>
+					<li><a class="menu-item" target="_blank" href="http://www.50vip.com/" title="开发者博客">开发者博客</a></li>
+					<li><a class="menu-item" target="_blank" href="http://www.atool.org/" title="在线工具集合">Online Tools</a></li>
+					<li><a class="menu-item"><wb:follow-button uid="3505855672" type="red_2" width="136" height="24" >关注微博</wb:follow-button></a></li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+		<!-- Fixed navbar -->
+		<div class="container demo-wrapper">
+			<div class="page-header">
+				<h3><a href="."></a>支付宝 #十年账单有话说# </h3>
+			</div>
+			<div class="row demo-columns">
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">生成你的专属海报</h3>
+						</div>
+						<div class="panel-body demo-panel-files" id="gen_img_file_panel">
+							<img id="temp_img" src="res/images/templete600.jpg" width="" />
+							<img id="gen_img" src="" width="" />
+						</div>
+						<script type="text/javascript">ReImgSize();</script>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- D&D Zone-->
+					<link href="res/css/style.css" rel="stylesheet" type="text/css"/>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">设置你的#十年账单有话说#</h3>
+						</div>
+						<div class="panel-body" id="upan-download">
+							<form role="form">
+								<div class="form-group">
+									<label for="t1">第一行文字</label>
+									<input type="text" id="t1" class="form-control"  title="第一行文字" />
+								</div>
+								<div class="form-group">
+									<label for="t2">第二行文字</label>
+									<input type="text" id="t2" class="form-control" title="第二行文字" />
+								</div>
+								<div class="form-group">
+									<label for="t3">第三行文字</label>
+									<input type="text" id="t3" class="form-control" title="第三行文字" />
+								</div>
+								<div id="drag-and-drop-zone" class="uploader">
+									<div class="browser">
+										<label>
+											<span>点击上传自己的照片</span>
+											<input type="file" name="files" accept="image/*"  title="点击上传图片" />
+										</label>
+									</div>
+								</div>
+								<button type="button" onclick="javascript:gen();" class="btn btn-default">生成海报图片</button>
+								<br />
+								<label style="color: red;">  轻轻点击生成好的图片就可以分享啦~</label>
+							</form>
+						</div>
+					</div>
+					<!-- /D&D Zone -->
+				</div>
+				<script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+				<script type="text/javascript" src="res/js/demo-preview.min.js"></script>
+				<script type="text/javascript" src="res/js/dmuploader.min.js"></script>
+				<!--<script type="text/javascript" src="res/js/WeixinApi.js"></script>-->
+				<script type="text/javascript">
+					var img_storage_url = '';
+					var gen_img_url = '';
+					$('#drag-and-drop-zone').dmUploader({
+						url: 'php/upload.php',
+						dataType: 'json',
+						allowedTypes: '*',
+						maxFileSize: 1024 * 1024 * 3.8,
+						onInit: function() {
+						},
+						onBeforeUpload: function(id) {
+						},
+						onNewFile: function(id, file) {
+						},
+						onComplete: function() {
+						},
+						onUploadProgress: function(id, percent) {
+						},
+						onUploadSuccess: function(id, data) {
+							//success
+							console.log(data);
+							if (data.status == 'ok') {
+								img_storage_url = data.data;
+								gen();
+							}
+							else {
+								alert('上传失败，请重试！');
+							}
+
+						},
+						onUploadError: function(id, message) {
+							alert('上传失败，请重试！');
+						},
+						onFileTypeError: function(file) {
+							alert('只能上传图片哦~');
+						},
+						onFileSizeError: function(file) {
+							alert('照片太大额，换一张小的吧~');
+						},
+						onFallbackMode: function(message) {
+							alert('你的浏览器太旧了，更新一下吧~');
+						}
+					});
+					function gen() {
+						var img_src = "http://1.rank.sinaapp.com/ali.jpg?t1=" + $('#t1').val() + "&t2=" + $('#t2').val() + "&t3=" + $('#t3').val() + '&u=' + img_storage_url;
+						gen_img_url = img_src;
+
+						$('#gen_img').attr('src', img_src);
+						var i = 0;
+						var notice = setInterval(function() {
+							if (i % 2 === 0) {
+								$('#gen_img').addClass('notice');
+							} else {
+								$('#gen_img').removeClass('notice');
+							}
+							if (i++ > 4) {
+								clearInterval(notice);
+							}
+						}, 200);
+					}
+					gen();
+					
+					$(window).resize(function() {
+						ReImgSize();
+						ReShowAllImgSize();
+					});
+				</script>
+				<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"2337303479","tqq":"801368329"},"bdText":"#十年账单日记# 我靠...","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"image":{"viewList":["tsina","qzone","tqq"],"viewText":"分享到：","viewSize":"32"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+				<!-- / Left column -->
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 id="swich-title" class="panel-title">他们也在说...</h3>
+						</div>
+						<div class="panel-body" id="upan-info">
+							<img id="show_all_img" src="res/images/showall.png" />
+							<script type="text/javascript">ReShowAllImgSize();</script>
+							<hr />
+							<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+							<!-- adapte_ad -->
+							<ins class="adsbygoogle"
+								 style="display:block"
+								 data-ad-client="ca-pub-7292810486004926"
+								 data-ad-slot="9220497478"
+								 data-ad-format="auto"></ins>
+							<script>
+							(adsbygoogle = window.adsbygoogle || []).push({});
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="demo-footer">
+				<p>© <a href="http://www.atool.org/" target="_blank">www.aTool.org</a> 2014 - 2014</p>
+			</div>
+		</div>
+		<span style="display:none;"><script src="http://s17.cnzz.com/stat.php?id=5763499&web_id=5763499" language="JavaScript"></script></span>
+	</body>
+</html>
