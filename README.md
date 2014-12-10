@@ -19,3 +19,8 @@ alipay-ten-year
 [http://ali.atool.org](http://ali.atool.org)
 
 
+## 推荐 ##
+
+如果你觉得你的支付宝话费太少，不好意思分享，可以试试这个工具：
+[http://www.atool.org/alipay_ten_year.php](http://www.atool.org/alipay_ten_year.php)
+
